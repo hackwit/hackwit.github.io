@@ -1,24 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Hackwit Val Summer 2016</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, intial-scale=1">
+	<!-- Above 3 meta tags **must** come first in the head -->
+	<meta name="description" content="Hackwit">
+    <meta name="author" content="Val Mack">
+
+	<title>Hackwit</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
 </head>
+
+
 <body>
-	<h1>Welcome to Hackwit Val Summer 2016</h1>
-	<h2>How to set up your personal webpage through GitHub pages</h2>
-	<p>
-		<ol>
-			<li>Move index.html to folder, named after your repository. (Remember repo should be username.github.io)</li>
-			<li>Git init in the github username directory</li>
-			<li>Git add . files to stage</li>
-			<li>Git commit -m  "first commit"</li>
-			<li>Connect local repo to remote repo</li>
-			<li>git remote add origin https://username@github.com/username/username.github.io</li>
-			<p>and if that doesn't work</p>
-			<li>git remote set-url origin https://username@github.com/username/username.github.io</li>
-			<li>git push --set-upstream origin master</li>
-		</ol>
-	</p>
-	<iframe width="420" height="315" src="https://www.youtube.com/embed/khzMK-lrDGg" frameborder="0" allowfullscreen></iframe>
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+          	<a href="https://hackwitval.typeform.com/to/Dm4lI4">
+            	<button type="button" class="btn btn-lg btn-success" id="feedback-btn">Feedback goes here :)</button>
+            </a>
+            <h1>Hackwit Val</h1>
+            <p>Casually spending the summer coding.</p>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-4">
+              <h3>Session 0</h3>
+              <p>GitHub</p>
+              <p><a class="btn btn-default" href="https://quip.com/2oNCALnkKNpg" role="button">Assignment 0</a></p>
+            </div><!--/.col-xs-6.col-lg-4-->
+            <div class="col-xs-6 col-lg-4">
+              <h3>S1</h3>
+              <p>CSS and JS</p>
+              <p><a class="btn btn-default" href="#" role="button"></a></p>
+            </div><!--/.col-xs-6.col-lg-4-->
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+          	<a href="http://www.youtube.com/channel/UCnAGYsV44SJSYvKecTbcS2Q/live" class="list-group-item active">
+          		<h2 class="list-group-item-heading">LIVE :<br/> Thursday 8:30pm EDT</h2>
+          	</a>
+          	<a href="views/minipage.html" class="list-group-item">
+				<h4 class="list-group-item-heading">GitHub Pages Demo (S0)</h4>
+				<p class="list-group-item-text">Learn to create a website hosted for free by GitHub Pages</p>
+			</a>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->
+    </div><!--/.container-->
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted"> <a href="https://github.com/hackwit/hackwit.github.io">https://github.com/hackwit/hackwit.github.io</a> 2©16</p>
+      </div>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 </body>
 </html>

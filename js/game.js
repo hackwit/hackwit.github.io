@@ -2,6 +2,7 @@ $(document).ready(function () { // can also write "(function($){}(jQuery));"
 
 var canvas = document.getElementById("gameCanvas");
 var ctx = canvas.getContext("2d"); // 2D rendering context
+$('#gameCanvas').css('background-color', '#19A698');
 
 // GLOBAL GAME VARIABLES
 var active = true;
@@ -12,6 +13,7 @@ var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
+var ballColor = "#BFBD1D";
 
 var paddleHeight = 10;
 var paddleWidth = 96;
@@ -81,7 +83,7 @@ function keyDownHandler(e) {
 function drawBall() {
 	ctx.beginPath();
 	ctx.arc(x,y,ballRadius,0,Math.PI*2);
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = ballColor;
 	ctx.fill();
 	ctx.closePath();
 }
@@ -91,7 +93,7 @@ function drawPaddle() {
 	// ctx.strokeStyle = "rgba(0,0,255,0.5)";
 	// ctx.lineWidth = 4;
 	// ctx.stroke();
-	ctx.fillStyle = "rgba(0,0,255,0.5)";
+	ctx.fillStyle = "#BFBD1D";
 	ctx.fill();
 	ctx.closePath();
 }
@@ -101,7 +103,7 @@ function drawBricks() {
 			if (bricks[c][r].status == 1) {
 	            ctx.beginPath();
 	            ctx.rect(bricks[c][r].x, bricks[c][r].y, brickWidth, brickHeight);
-	            ctx.fillStyle = "#0095DD";
+	            ctx.fillStyle = "#FFE987";
 	            ctx.fill();
 	            ctx.closePath();
 	        }
@@ -115,6 +117,8 @@ function ballHitBrick(x1, y1, w1, h1, x2, y2) {
 	(x2,y2) = (x,y) coordinates of object 2
 	*/
 	if ((x1 <= x2 && x1+w1 >= x2) && (y1 <= y2 && y1+h1 >= y2)) {
+		ballColor = "#EB2F4B";
+		setTimeout(function() {ballColor = "#BFBD1D";},10);
 		return true;
 	} else {
 		return false;
@@ -135,7 +139,7 @@ function collisionDetection() {
 }
 function gameOver() {
 	ctx.font = "30px Helvetica";
-	ctx.fillStyle = "red";
+	ctx.fillStyle = "white";
 	ctx.textAlign = "center";
 	ctx.fillText("oh... awkward. you lost", canvas.width/2, canvas.height/2);
 	// setTimeout(function() {
@@ -145,8 +149,8 @@ function gameOver() {
 // ACTION STARTS HERE
 function draw() {
 	ctx.clearRect(0,0,canvas.width,canvas.height);
-	drawBricks();
 	drawPaddle();
+	drawBricks();
 	drawBall();
 	collisionDetection();
 

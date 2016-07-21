@@ -50,11 +50,15 @@ document.addEventListener("keydown", keyDownHandler, false);
 
 function keyDownHandler(e) {
 	switch (e.keyCode) {
-		case 68: //D
+		// D
+		case 68:
+		case 39:
 			rightPressed = true;
 			leftPressed = false;
 			break;
-		case 65: //A
+		// A
+		case 65:
+		case 37:
 			leftPressed = true;
 			rightPressed = false;
 			break;
